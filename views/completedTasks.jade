@@ -1,0 +1,10 @@
+extend layout
+block contentCompleted
+	.mainContainer
+		h2 #{title} : #{ tasks.length }
+		each task, i in tasks
+			div.addTask
+				a.done.btn.btn-success(href='/tasks/#{ task._id }') Undone
+				span #{ task._id }. #{ task.task } - (Created at: #{ task.taskDate })
+				a.delete.btn.btn-danger(href='/tasks/#{ task._id }')
+					span.glyphicon.glyphicon-trash(aria-hidden="true")

@@ -1,0 +1,28 @@
+doctype
+html
+	head
+		title To-Dos App
+		link(rel='stylesheet', href='/bootstrap.css')
+		link(rel='stylesheet', href='/styles.css')
+	body
+		.container
+			header
+			h1 To-Dos App
+			br
+			nav.navbar.navbar-default( role="navigation" )
+				.navbar-header
+					button.navbar-toggle.collapsed( type="button", data-toggle="collapse", data-target="#navbar-inverse", aria-expanded="false", aria-controls="navbar")
+					#navbar-inverse.collapse.navbar-collapse
+						ul.nav.navbar-nav
+							li.active: a( href="/tasks") List tasks
+							li: a( href="/completed" ) Completed
+			.main-content
+				br
+				block contentTasks
+			.sidebar
+				block contentCompleted
+			footer
+				p Running on node with Express and Jade
+		script(src='/jquery-2.2.4.min.js')
+		script(src='/bootstrap.min.js')
+		script(src='/main.js')
